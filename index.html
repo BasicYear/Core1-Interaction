@@ -41,6 +41,14 @@
 #text {
  width: 300px;
 }
+
+/* Hide canvas on screens narrower than 768px (common mobile width) */
+@media (max-width: 768px) {
+    canvas {
+        display: none;
+    }
+}
+
     </style>
 </head>
 <body>
