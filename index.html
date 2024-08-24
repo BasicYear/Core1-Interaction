@@ -8,7 +8,7 @@
         :root {
             --node-color: lightgrey; /* Color of nodes */
             --line-color: blue; /* Color of lines */
-            --node-radius: 2px; /* Radius of nodes */
+            --node-radius: 0px; /* Radius of nodes */
             --line-width: 1px; /* Width of lines */
             --font-size: 0px; /* Font size for node labels */
         }
@@ -173,11 +173,13 @@
                 ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--node-color').trim();
                 ctx.fill();
                 ctx.closePath();
-
-                ctx.fillStyle = 'black';
+                
+                /* this part styles the label for the center node
+                ctx.fillStyle = 'red';
                 ctx.textAlign = 'center';
                 ctx.font = `${parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--font-size')) * devicePixelRatio}px Arial`;
                 ctx.fillText(node.id, node.x, node.y - 10);
+                */
             }
 
             // Define manually added nodes and draw them
@@ -188,7 +190,6 @@
                 
                 { id: '1A', x: centerX + (nodes[1].x - centerX) * 0.40, y: centerY + (nodes[1].y - centerY) * 0.40 },
                 { id: '1B', x: centerX + (nodes[1].x - centerX) * 0.70, y: centerY + (nodes[1].y - centerY) * 0.70 },
-                
                 
                 { id: '2A', x: centerX + (nodes[2].x - centerX) * 0.30, y: centerY + (nodes[2].y - centerY) * 0.30 },
                 { id: '2B', x: centerX + (nodes[2].x - centerX) * 0.60, y: centerY + (nodes[2].y - centerY) * 0.60 },
@@ -213,11 +214,13 @@
                 ctx.fill();
                 ctx.closePath();
 
+                /* This part styles node labels
                 ctx.fillStyle = 'black';
                 ctx.textAlign = 'center';
                 ctx.font = `${parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--font-size')) * devicePixelRatio}px Arial`;
                 ctx.fillText(node.id, node.x, node.y - 10);
-
+                */
+                
                 nodeMap[node.id] = node;
             });
 
