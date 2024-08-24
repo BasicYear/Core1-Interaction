@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Core 1: Interaction</title>
     <style>
         /* Define CSS variables for node and line styling */
@@ -43,9 +44,9 @@
 }
 
 /* Hide canvas on screens narrower than 768px (common mobile width) */
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     canvas {
-        display: none;
+        display: none !important;
     }
 }
 
@@ -173,7 +174,7 @@
                 ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--node-color').trim();
                 ctx.fill();
                 ctx.closePath();
-                
+
                 /* this part styles the label for the center node
                 ctx.fillStyle = 'red';
                 ctx.textAlign = 'center';
